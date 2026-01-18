@@ -17,10 +17,6 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:5000',
-        description: 'Servidor de desarrollo',
-      },
-      {
         url: 'https://mindjourney-service-tourismagency.onrender.com',
         description: 'Servidor de producción (Render)',
       },
