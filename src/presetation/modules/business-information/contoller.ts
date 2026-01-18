@@ -20,7 +20,7 @@ export class BusinessInformationController{
         const [error, offerEntity] = OfferEntity.fromObject(offer);
         if(error) return this.handleError(error, res);
 
-        this.businessInformationService.pushPartnerOffers(offerEntity!)
+        return this.businessInformationService.pushPartnerOffers(offerEntity!)
         .then(offer => res.status(200).json(`New offer was received successfully\n${offer}`))
         .catch(err => this.handleError(err, res))
     }
