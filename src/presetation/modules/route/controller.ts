@@ -21,7 +21,10 @@ export class RouteController{
         if(error) return this.handleError(error, res);
 
         return this.routeService.updateRoute(routeEntity!)
-        .then(update => res.status(200).json(`New route was received successfully\n${update}`))
+        .then(update => res.status(200).json({
+            message: 'New route was received successfully',
+            data: update
+        }))
         .catch(err => this.handleError(err, res))
     }
 

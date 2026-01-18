@@ -21,7 +21,10 @@ export class BusinessInformationController{
         if(error) return this.handleError(error, res);
 
         return this.businessInformationService.pushPartnerOffers(offerEntity!)
-        .then(offer => res.status(200).json(`New offer was received successfully\n${offer}`))
+        .then(offer => res.status(200).json({
+            message: 'New offer was received successfully',
+            data: offer
+        }))
         .catch(err => this.handleError(err, res))
     }
 }
